@@ -24,13 +24,13 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      # - name: Checkout cli-test Repository # TODO: 改main branch
-      #   uses: actions/checkout@v4
-      #   with:
-      #     repository: BrobridgeOrg/gravity-cli-tests
-      #     token: ${{ secrets.RUN_TOKEN }}
-      #     path: test_code/gravity-cli-tests
-      #     ref: GN-206_specified_version_test
+      - name: Checkout cli-test Repository # TODO: 改main branch
+        uses: actions/checkout@v4
+        with:
+          repository: BrobridgeOrg/gravity-cli-tests
+          token: ${{ secrets.RUN_TOKEN }}
+          path: test_code/gravity-cli-tests
+          ref: GN-206_specified_version_test
 
       - uses: earthly/actions-setup@v1
         with:
@@ -39,20 +39,12 @@ jobs:
       - uses: earthly/actions-setup@v1
         with:
           version: v0.8.14
-      - uses: actions/checkout@v2
       - name: Docker Login
         run: docker login --username "${{ secrets.DOCKERHUB_USERNAME }}" --password "${{ secrets.DOCKERHUB_TOKEN }}"
       - run: earthly bootstrap
 
       - name: Run Test Scripts
-        uses: actions/checkout@v4
-        with:
-          repository: BrobridgeOrg/gravity-cli-tests
-          token: ${{ secrets.RUN_TOKEN }}
-          path: test_code/gravity-cli-tests
-          ref: GN-206_specified_version_test
         run: |
-          cd ..
           echo "Running tests"
           chmod +x scripts/run_all.sh
           scripts/run_all.sh ${{github.event.inputs.nats_jetstream_version}} ${{github.event.inputs.gravity_dispatcher_version}} ${{github.event.inputs.gravity_sdk_version}}

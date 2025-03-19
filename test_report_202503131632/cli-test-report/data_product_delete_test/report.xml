@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuites name="" tests="3" skipped="0" failures="0" errors="0" time="95.993215003">
-  <testsuite name="Data Product delete" tests="3" skipped="0" failures="0" errors="0" time="95.993126639">
-    <testcase name="Success scenario for the deletion of an existing Data Product M(1) " status="passed" time="32.2169528"></testcase>
-    <testcase name="Fail scenario for the deletion of a non-existent Data Product E1(1) " status="passed" time="32.209270912"></testcase>
-    <testcase name="Fail scenario for the deletion of a non-existent Data Product E1(2) " status="passed" time="31.565640544"></testcase>
-  </testsuite>
-</testsuites>

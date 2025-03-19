@@ -1,6 +1,6 @@
 #!/bin/bash
 # run this file after running run_all_test.sh
-report_path=test_report_$(date +%Y%m%d%H%M)
+report_path=test_reports/test_report_$(date +%Y%m%d%H%M)
 mkdir -p $report_path/cli-test-report
 rm -rf $report_path/cli-test-report/*
 cp -r test_code/gravity-cli-tests/test_report/* $report_path/cli-test-report
