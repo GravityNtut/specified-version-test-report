@@ -1,0 +1,42 @@
+name: Run Specified Version Test
+
+on:
+  workflow_dispatch:
+    inputs:
+      nats_jetstream_version:
+        description: 'NATS JetStream Version'
+        required: true
+        default: 'v0.0.31-20250220'
+      gravity_dispatcher_version:
+        description: 'Gravity Dispatcher Version'
+        required: true
+        default: 'v1.3.21-20250117'
+      gravity_sdk_version:
+        description: 'Gravity SDK Version'
+        required: true
+        default: 'v2.0.7'
+
+jobs:
+  run-tests:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      # - name: Checkout E2E-test Repository
+      #   uses: actions/checkout@v4
+      #   with:
+      #     repository: BrobridgeOrg/End-to-End-test
+      #     token: ${{ secrets.REPORT_TOKEN }}
+
+      - name: Checkout cli-test Repository
+        uses: actions/checkout@v4
+        with:
+          repository: BrobridgeOrg/gravity-cli-tests
+
+      - name: Run Shell Scripts
+        run: |
+          chmod +x scripts/run-all.sh
+          echo "Running script"
+          ./scripts/run-all.sh ${{ github.event.inputs.nats_jetstream_version }} ${{ github.event.inputs.gravity_dispatcher_version }} ${{ github.event.inputs.gravity_sdk_version }}
