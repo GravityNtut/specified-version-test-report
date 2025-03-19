@@ -8,7 +8,7 @@ cp -r test_code/gravity-cli-tests/test_report/* $report_path/cli-test-report
 output_file=$report_path/README.md
 rm -f $output_file
 touch $output_file
-base_url="https://github.com/BrobridgeOrg/specified-version-test-report/blob/main"
+base_url="https://github.com/GravityNtut/specified-version-test-report/blob/main"
 
 # TODO: 改readme網址
 cat <<EOT > $output_file
