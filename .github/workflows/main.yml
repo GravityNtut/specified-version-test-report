@@ -37,17 +37,15 @@ jobs:
           echo "Running tests"
           ls
           echo "---"
-          ls test_code/gravity-cli-tests
-          echo "---"
           ls scripts/
-          chmod +x ./scripts/run-all.sh
-          ./scripts/run-all.sh ${{github.event.inputs.nats_jetstream_version}} ${{github.event.inputs.gravity_dispatcher_version}} ${{github.event.inputs.gravity_sdk_version}}
+          chmod +x scripts/run_all.sh
+          scripts/run-all.sh ${{github.event.inputs.nats_jetstream_version}} ${{github.event.inputs.gravity_dispatcher_version}} ${{github.event.inputs.gravity_sdk_version}}
 
       - name: Create Test Report
         run: |
           echo "Generating test report"
-          chmod +x ./scripts/generate-report.sh
-          ./scripts/create_test_report.sh
+          chmod +x scripts/generate-report.sh
+          scripts/create_test_report.sh
 
       - name: Configure Git
         run: |
@@ -56,6 +54,6 @@ jobs:
 
       - name: Commit and push changes
         run: |
-          git add ./test_report_*
+          git add test_report_*
           git commit -m "Update test_summary [skip ci]" || echo "No changes to commit"
           git push origin main
