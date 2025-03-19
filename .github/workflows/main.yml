@@ -24,25 +24,24 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Checkout cli-test Repository
+      - name: Checkout cli-test Repository # TODO: 改main branch
         uses: actions/checkout@v4
         with:
           repository: BrobridgeOrg/gravity-cli-tests
           token: ${{ secrets.RUN_TOKEN }}
-          path: gravity-cli-tests
+          path: test_code/gravity-cli-tests
+          ref: GN-206_specified_version_test
 
       - name: Run Test Scripts
         run: |
           echo "Running tests"
-          pwd
-          ls
-          chmod +x ../scripts/run-all.sh
+          chmod +x ./scripts/run-all.sh
           ./scripts/run-all.sh ${{github.event.inputs.nats_jetstream_version}} ${{github.event.inputs.gravity_dispatcher_version}} ${{github.event.inputs.gravity_sdk_version}}
 
       - name: Create Test Report
         run: |
           echo "Generating test report"
-          chmod +x ../scripts/generate-report.sh
+          chmod +x ./scripts/generate-report.sh
           ./scripts/create_test_report.sh
 
       - name: Configure Git
