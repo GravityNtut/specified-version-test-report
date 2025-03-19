@@ -33,7 +33,7 @@ jobs:
       - name: Run Test Scripts
         run: |
           echo "Running tests"
-          pwd
+          ls
           chmod +x ./scripts/run-all.sh
           ./scripts/run-all.sh ${{github.event.inputs.nats_jetstream_version}} ${{github.event.inputs.gravity_dispatcher_version}} ${{github.event.inputs.gravity_sdk_version}}
 
