@@ -32,14 +32,14 @@ jobs:
 
       - name: Run Test Scripts
         run: |
-          chmod +x ./scripts/run-all.sh
           echo "Running tests"
+          pwd
+          chmod +x ./scripts/run-all.sh
           ./scripts/run-all.sh ${{github.event.inputs.nats_jetstream_version}} ${{github.event.inputs.gravity_dispatcher_version}} ${{github.event.inputs.gravity_sdk_version}}
 
       - name: Create Test Report
         run: |
           echo "Generating test report"
-          pwd
           chmod +x ./scripts/generate-report.sh
           ./scripts/create_test_report.sh
         working-directory: repo
