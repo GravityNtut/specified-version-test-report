@@ -29,20 +29,21 @@ jobs:
         with:
           repository: BrobridgeOrg/gravity-cli-tests
           token: ${{ secrets.RUN_TOKEN }}
+          path: gravity-cli-tests
 
       - name: Run Test Scripts
         run: |
           echo "Running tests"
+          pwd
           ls
-          chmod +x ./scripts/run-all.sh
+          chmod +x ../scripts/run-all.sh
           ./scripts/run-all.sh ${{github.event.inputs.nats_jetstream_version}} ${{github.event.inputs.gravity_dispatcher_version}} ${{github.event.inputs.gravity_sdk_version}}
 
       - name: Create Test Report
         run: |
           echo "Generating test report"
-          chmod +x ./scripts/generate-report.sh
+          chmod +x ../scripts/generate-report.sh
           ./scripts/create_test_report.sh
-        working-directory: repo
 
       - name: Configure Git
         run: |
@@ -54,4 +55,3 @@ jobs:
           git add ./test_report_*
           git commit -m "Update test_summary [skip ci]" || echo "No changes to commit"
           git push origin main
-        working-directory: repo
