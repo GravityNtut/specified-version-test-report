@@ -32,12 +32,23 @@ jobs:
 
       - name: Run Test Scripts
         run: |
-          chmod +x scripts/run-all.sh
+          chmod +x ./scripts/run-all.sh
           echo "Running tests"
           ./scripts/run-all.sh ${{ github.event.inputs.nats_jetstream_version }} ${{ github.event.inputs.gravity_dispatcher_version }} ${{ github.event.inputs.gravity_sdk_version }}
 
       - name: Create Test Report
         run: |
           echo "Generating test report"
-          chmod +x scripts/generate-report.sh
+          chmod +x ./scripts/generate-report.sh
           ./scripts/create_test_report.sh
+
+      - name: Configure Git
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Commit and push changes
+        run: |
+          git add ./test_report_*
+          git commit -m "Update test_summary [skip ci]" || echo "No changes to commit"
+          git push origin main
