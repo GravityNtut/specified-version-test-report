@@ -32,6 +32,18 @@ jobs:
           path: test_code/gravity-cli-tests
           ref: GN-206_specified_version_test
 
+      - uses: earthly/actions-setup@v1
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          version: "latest"
+      - uses: earthly/actions-setup@v1
+        with:
+          version: v0.8.14
+      - uses: actions/checkout@v2
+      - name: Docker Login
+        run: docker login --username "${{ secrets.DOCKERHUB_USERNAME }}" --password "${{ secrets.DOCKERHUB_TOKEN }}"
+      - run: earthly bootstrap
+
       - name: Run Test Scripts
         run: |
           echo "Running tests"

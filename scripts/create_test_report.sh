@@ -10,9 +10,10 @@ rm -f $output_file
 touch $output_file
 base_url="https://github.com/BrobridgeOrg/specified-version-test-report/blob/main"
 
+# TODO: 改readme網址
 cat <<EOT > $output_file
 # Test Summary
-To learn how to view the test report, you can refer to [this page](https://github.com/BrobridgeOrg/specified-version-test-report/blob/main/HOW_TO_USE.md).
+To learn how to view the test report, you can refer to [this page](https://github.com/GravityNtut/specified-version-test-report/blob/main/HOW_TO_USE.md).
 EOT
 
 for folder in $(find ./$report_path/ -mindepth 1 -maxdepth 1 -type d -name "*-test-report"); do
