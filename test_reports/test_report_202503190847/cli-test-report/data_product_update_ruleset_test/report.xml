@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="" tests="28" skipped="0" failures="4" errors="0" time="3.977348458">
+  <testsuite name="Data Product ruleset update" tests="28" skipped="0" failures="4" errors="0" time="3.977160035">
+    <testcase name="Success scenario for updating data product ruleset M(1) " status="passed" time="0.14188765"></testcase>
+    <testcase name="Success scenario for updating data product ruleset M(2) " status="passed" time="0.13875165"></testcase>
+    <testcase name="Success scenario for updating data product ruleset M(3) " status="failed" time="0.138122006">
+      <failure message="Step Check updating ruleset success: update ruleset should success"></failure>
+      <error message="Step Use NATS jetstream to query the &#34;&#39;drink&#39;&#34; &#34;&#39;drinkCreated&#39;&#34; update successfully and parameters are &#34;&#39;create&#39;&#34; &#34;&#39;[ignore]&#39;&#34; &#34;&#39;[ignore]&#39;&#34; &#34;&#39;[ignore]&#39;&#34; &#34;&#39;[ignore]&#39;&#34; &#34;&#39;[ignore]&#39;&#34; &#34;&#39;[ignore]&#39;&#34;" type="skipped"></error>
+    </testcase>
+    <testcase name="Success scenario for updating data product ruleset M(4) " status="passed" time="0.139787742"></testcase>
+    <testcase name="Success scenario for updating data product ruleset M(5) " status="passed" time="0.1401446"></testcase>
+    <testcase name="Success scenario for updating data product ruleset M(6) " status="passed" time="0.147200726"></testcase>
+    <testcase name="Success scenario for updating data product ruleset M(7) " status="passed" time="0.143293305"></testcase>
+    <testcase name="Success scenario for updating data product ruleset M(8) " status="passed" time="0.138631119"></testcase>
+    <testcase name="Success scenario for updating data product ruleset M(9) " status="passed" time="0.143045114"></testcase>
+    <testcase name="Success scenario for updating data product ruleset M(10) " status="passed" time="0.141727727"></testcase>
+    <testcase name="Success scenario for updating data product ruleset M(11) " status="passed" time="0.141271407"></testcase>
+    <testcase name="Success scenario for updating data product ruleset M(12) " status="passed" time="0.137981711"></testcase>
+    <testcase name="Success scenario for updating data product ruleset M(13) " status="passed" time="0.141840388"></testcase>
+    <testcase name="Success scenario for updating data product ruleset M(14) " status="passed" time="0.139336105"></testcase>
+    <testcase name="Fail scenario for updating data product ruleset E1(1) " status="passed" time="0.135404005"></testcase>
+    <testcase name="Fail scenario for updating data product ruleset E1(2) " status="passed" time="0.137067248"></testcase>
+    <testcase name="Fail scenario for updating data product ruleset E1(3) " status="passed" time="0.135154618"></testcase>
+    <testcase name="Fail scenario for updating data product ruleset E1(4) " status="passed" time="0.139234006"></testcase>
+    <testcase name="Fail scenario for updating data product ruleset E1(5) " status="passed" time="0.14006651"></testcase>
+    <testcase name="Fail scenario for updating data product ruleset E1(6) " status="passed" time="0.139213379"></testcase>
+    <testcase name="Fail scenario for updating data product ruleset E1(7) " status="passed" time="0.138773966"></testcase>
+    <testcase name="Fail scenario for updating data product ruleset E1(8) " status="passed" time="0.13877969"></testcase>
+    <testcase name="Fail scenario for updating data product ruleset E1(9) " status="passed" time="0.141681487"></testcase>
+    <testcase name="Fail scenario for updating data product ruleset E1(10) " status="passed" time="0.13943319"></testcase>
+    <testcase name="Fail scenario for updating data product ruleset E1(11) " status="passed" time="0.139778738"></testcase>
+    <testcase name="Fail scenario for updating data product ruleset E1(12) " status="failed" time="0.147444959">
+      <failure message="Step CLI returns exit code 1: update ruleset should fail"></failure>
+      <error message="Step Use NATS jetstream to query the &#34;&#39;drink&#39;&#34; &#34;&#39;drinkCreated&#39;&#34; without changing parameters" type="skipped"></error>
+    </testcase>
+    <testcase name="Fail scenario for updating data product ruleset E1(13) " status="failed" time="0.14114315">
+      <failure message="Step CLI returns exit code 1: update ruleset should fail"></failure>
+      <error message="Step Use NATS jetstream to query the &#34;&#39;drink&#39;&#34; &#34;&#39;drinkCreated&#39;&#34; without changing parameters" type="skipped"></error>
+    </testcase>
+    <testcase name="Fail scenario for updating data product ruleset E1(14) " status="failed" time="0.140502498">
+      <failure message="Step CLI returns exit code 1: update ruleset should fail"></failure>
+      <error message="Step Use NATS jetstream to query the &#34;&#39;drink&#39;&#34; &#34;&#39;drinkCreated&#39;&#34; without changing parameters" type="skipped"></error>
+    </testcase>
+  </testsuite>
+</testsuites>
