@@ -34,13 +34,15 @@ jobs:
         run: |
           chmod +x ./scripts/run-all.sh
           echo "Running tests"
-          ./scripts/run-all.sh ${{ github.event.inputs.nats_jetstream_version }} ${{ github.event.inputs.gravity_dispatcher_version }} ${{ github.event.inputs.gravity_sdk_version }}
+          ./scripts/run-all.sh ${{github.event.inputs.nats_jetstream_version}} ${{github.event.inputs.gravity_dispatcher_version}} ${{github.event.inputs.gravity_sdk_version}}
 
       - name: Create Test Report
         run: |
           echo "Generating test report"
+          pwd
           chmod +x ./scripts/generate-report.sh
           ./scripts/create_test_report.sh
+        working-directory: repo
 
       - name: Configure Git
         run: |
@@ -52,3 +54,4 @@ jobs:
           git add ./test_report_*
           git commit -m "Update test_summary [skip ci]" || echo "No changes to commit"
           git push origin main
+        working-directory: repo
