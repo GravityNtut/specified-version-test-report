@@ -41,7 +41,7 @@ jobs:
       - name: Create Test Report
         run: |
           echo "Generating test report"
-          chmod +x scripts/generate-report.sh
+          chmod +x scripts/create_test_report.sh
           scripts/create_test_report.sh
 
       - name: Configure Git
