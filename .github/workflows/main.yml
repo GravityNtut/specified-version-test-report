@@ -35,6 +35,11 @@ jobs:
       - name: Run Test Scripts
         run: |
           echo "Running tests"
+          ls
+          echo "---"
+          ls test_code/gravity-cli-tests
+          echo "---"
+          ls scripts/
           chmod +x ./scripts/run-all.sh
           ./scripts/run-all.sh ${{github.event.inputs.nats_jetstream_version}} ${{github.event.inputs.gravity_dispatcher_version}} ${{github.event.inputs.gravity_sdk_version}}
 
