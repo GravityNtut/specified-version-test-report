@@ -62,6 +62,6 @@ jobs:
 
       - name: Commit and push changes
         run: |
-          git add test_report_*
+          git add /test_report/*
           git commit -m "Update test_summary [skip ci]" || echo "No changes to commit"
           git push origin main
