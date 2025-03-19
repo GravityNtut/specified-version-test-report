@@ -23,12 +23,6 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-      
-      # - name: Checkout E2E-test Repository
-      #   uses: actions/checkout@v4
-      #   with:
-      #     repository: BrobridgeOrg/End-to-End-test
-      #     token: ${{ secrets.REPORT_TOKEN }}
 
       - name: Checkout cli-test Repository
         uses: actions/checkout@v4
@@ -36,8 +30,14 @@ jobs:
           repository: BrobridgeOrg/gravity-cli-tests
           token: ${{ secrets.RUN_TOKEN }}
 
-      - name: Run Shell Scripts
+      - name: Run Test Scripts
         run: |
           chmod +x scripts/run-all.sh
-          echo "Running script"
+          echo "Running tests"
           ./scripts/run-all.sh ${{ github.event.inputs.nats_jetstream_version }} ${{ github.event.inputs.gravity_dispatcher_version }} ${{ github.event.inputs.gravity_sdk_version }}
+
+      - name: Create Test Report
+        run: |
+          echo "Generating test report"
+          chmod +x scripts/generate-report.sh
+          ./scripts/create_test_report.sh
