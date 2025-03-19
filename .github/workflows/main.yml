@@ -6,11 +6,11 @@ on:
       nats_jetstream_version:
         description: 'NATS JetStream Version'
         required: true
-        default: 'v0.0.31-20250220'
+        default: 'v1.3.21-20250117'
       gravity_dispatcher_version:
         description: 'Gravity Dispatcher Version'
         required: true
-        default: 'v1.3.21-20250117'
+        default: 'v0.0.31-20250220'
       gravity_sdk_version:
         description: 'Gravity SDK Version'
         required: true
@@ -62,6 +62,6 @@ jobs:
 
       - name: Commit and push changes
         run: |
-          git add /test_report/*
+          git add test_reports/*
           git commit -m "Update test_summary [skip ci]" || echo "No changes to commit"
           git push origin main
