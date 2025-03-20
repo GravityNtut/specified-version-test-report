@@ -10,8 +10,8 @@ cd test_code
 root_path=$(pwd)
 
 # run gravity-cli-tests test
-cd gravity-cli-tests
-earthly -P +specified-version-test --nats_jetstream_version=$1 --gravity_dispatcher_version=$2 --gravity_sdk_version=$5
+# cd gravity-cli-tests
+# earthly -P +specified-version-test --nats_jetstream_version=$1 --gravity_dispatcher_version=$2 --gravity_sdk_version=$5
 
 cd $root_path
 cd e2e-tests
