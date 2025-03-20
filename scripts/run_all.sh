@@ -5,7 +5,6 @@
 # $3 gravity_sdk_version
 
 root_path=$(pwd)
-ls
 cd test_code
 
 # run gravity-cli-tests test

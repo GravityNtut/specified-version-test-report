@@ -1,9 +1,11 @@
 #!/bin/bash
-# run this file after running run_all_test.sh
+# run this file after running run_all.sh
+
 report_path=test_reports/test_report_$(date +%Y%m%d%H%M)
 mkdir -p $report_path/cli-test-report
 rm -rf $report_path/cli-test-report/*
 cp -r test_code/gravity-cli-tests/test_report/* $report_path/cli-test-report
+
 # create test report
 output_file=$report_path/README.md
 rm -f $output_file
