@@ -11,6 +11,14 @@ on:
         description: 'Gravity Dispatcher Version'
         required: true
         default: 'v0.0.31-20250220'
+      atomic_version:
+        description: 'Atomic Version'
+        required: true
+        default: 'v1.0.0-20250301-ubi'
+      gravity_adapter_mssql_version:
+        description: 'Gravity Adapter Version'
+        required: true
+        default: 'v3.0.15-20250201'
       gravity_sdk_version:
         description: 'Gravity SDK Version'
         required: true
@@ -30,6 +38,14 @@ jobs:
           repository: BrobridgeOrg/gravity-cli-tests
           token: ${{ secrets.RUN_TOKEN }}
           path: test_code/gravity-cli-tests
+          ref: GN-206_specified_version_test
+
+      - name: Checkout E2E-test Repository # TODO: 改main branch
+        uses: actions/checkout@v4
+        with:
+          repository: BrobridgeOrg/End-to-End-test
+          token: ${{ secrets.RUN_TOKEN }}
+          path: test_code/e2e-tests
           ref: GN-206_specified_version_test
 
       - name: Install dependencies
@@ -52,7 +68,7 @@ jobs:
         run: |
           echo "Running tests"
           chmod +x scripts/run_all.sh
-          scripts/run_all.sh ${{github.event.inputs.nats_jetstream_version}} ${{github.event.inputs.gravity_dispatcher_version}} ${{github.event.inputs.gravity_sdk_version}}
+          scripts/run_all.sh ${{github.event.inputs.nats_jetstream_version}} ${{github.event.inputs.gravity_dispatcher_version}} ${{github.event.inputs.atomic_version}} ${{github.event.inputs.gravity_adapter_mssql_version}} ${{github.event.inputs.gravity_sdk_version}}
 
       - name: Create Test Report
         run: |

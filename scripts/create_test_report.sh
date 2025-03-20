@@ -2,17 +2,22 @@
 # run this file after running run_all.sh
 
 report_path=test_reports/test_report_$(date +%Y%m%d%H%M)
+# cli
 mkdir -p $report_path/cli-test-report
 rm -rf $report_path/cli-test-report/*
 cp -r test_code/gravity-cli-tests/test_report/* $report_path/cli-test-report
+# e2e
+mkdir -p $report_path/end-to-end-test-report
+rm -rf $report_path/end-to-end-test-report/*
+cp -r test_code/e2e-tests/* $report_path/end-to-end-test-report
 
 # create test report
 output_file=$report_path/README.md
 rm -f $output_file
 touch $output_file
-base_url="https://github.com/GravityNtut/specified-version-test-report/blob/main"
+# TODO: 改網址
+base_url="https://github.com/GravityNtut/specified-version-test-report/blob/main" 
 
-# TODO: 改readme網址
 cat <<EOT > $output_file
 # Test Summary
 To learn how to view the test report, you can refer to [this page](https://github.com/GravityNtut/specified-version-test-report/blob/main/HOW_TO_USE.md).
@@ -32,7 +37,7 @@ for folder in $(find ./$report_path/ -mindepth 1 -maxdepth 1 -type d -name "*-te
     failures=$(xmllint --xpath "string(/testsuites/@failures)" "$xml")
     passed=$((total_tests - failures))
 
-    report_link="${base_url}/${folder_name}/${relative_folder_path}/report.md"
+    report_link="${base_url}/${relative_folder_path}/report.md"
 
     test_folder_name=$(basename "$relative_folder_path")
 
