@@ -61,14 +61,14 @@ jobs:
         with:
           version: v0.8.14
       - name: Docker Login
-        run: docker login --username "${{ secrets.DOCKERHUB_USERNAME }}" --password "${{ secrets.DOCKERHUB_TOKEN }}"
+        run: | 
+          docker login --username "${{ secrets.DOCKERHUB_USERNAME }}" --password "${{ secrets.DOCKERHUB_TOKEN }}"
+          docker login ghcr.io --username "${{ secrets.GHCR_USERNAME }}" --password "${{ secrets.RUN_TOKEN }}"
       - run: earthly bootstrap
 
       - name: Run Test Scripts
         run: |
           echo "Running tests"
-          eval $(ssh-agent)
-          ssh-add - <<< '${{ secrets.PRIVATE_SSH_KEY }}'
           chmod +x scripts/run_all.sh
           scripts/run_all.sh ${{github.event.inputs.nats_jetstream_version}} ${{github.event.inputs.gravity_dispatcher_version}} ${{github.event.inputs.atomic_version}} ${{github.event.inputs.gravity_adapter_mssql_version}} ${{github.event.inputs.gravity_sdk_version}}
 
