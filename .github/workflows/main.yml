@@ -6,7 +6,7 @@ on:
       nats_jetstream_version:
         description: 'NATS JetStream Version'
         required: true
-        default: 'v1.3.21-20250117'
+        default: 'v1.3.21-20250201'
       gravity_dispatcher_version:
         description: 'Gravity Dispatcher Version'
         required: true
@@ -67,6 +67,8 @@ jobs:
       - name: Run Test Scripts
         run: |
           echo "Running tests"
+          eval $(ssh-agent)
+          ssh-add - <<< '${{ secrets.PRIVATE_SSH_KEY }}'
           chmod +x scripts/run_all.sh
           scripts/run_all.sh ${{github.event.inputs.nats_jetstream_version}} ${{github.event.inputs.gravity_dispatcher_version}} ${{github.event.inputs.atomic_version}} ${{github.event.inputs.gravity_adapter_mssql_version}} ${{github.event.inputs.gravity_sdk_version}}
 
