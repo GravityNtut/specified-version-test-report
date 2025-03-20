@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="" tests="1" skipped="0" failures="1" errors="0" time="117.984803926">
+  <testsuite name="Gravity2 MSSQL to MySQL - Check boolean type" tests="1" skipped="0" failures="1" errors="0" time="117.984650901">
+    <testcase name="Check the boolean value correctness at each point in the process" status="failed" time="117.984650901">
+      <failure message="Step Start the &#34;atomic&#34; service (timeout &#34;60&#34;): the service &#39;atomic&#39; timed out within 60 seconds"></failure>
+      <error message="Step Start the &#34;gravity-adapter-mssql&#34; service (timeout &#34;60&#34;)" type="skipped"></error>
+      <error message="Step &#34;source-mssql&#34; table &#34;Products&#34; inserted a record which has false boolean value" type="skipped"></error>
+      <error message="Step Check the &#34;source-mssql&#34; table Products has a record with false value" type="skipped"></error>
+      <error message="Step Check the nats stream default domain has a record with false value" type="skipped"></error>
+      <error message="Step Wait &#34;5&#34; seconds" type="skipped"></error>
+      <error message="Step Check the atomic has a record with false value" type="skipped"></error>
+      <error message="Step Check the &#34;target-mysql&#34; table Products has a record with false value" type="skipped"></error>
+    </testcase>
+  </testsuite>
+</testsuites>
