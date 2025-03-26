@@ -24,6 +24,9 @@ on:
         required: true
         default: 'v2.0.7'
 
+permissions:
+  contents: write
+
 jobs:
   Run-tests:
     environment: Specified_Version_Test
