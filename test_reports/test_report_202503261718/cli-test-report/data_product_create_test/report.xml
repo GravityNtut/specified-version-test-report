@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="" tests="17" skipped="0" failures="0" errors="0" time="2.25922565">
+  <testsuite name="Data Product create" tests="17" skipped="0" failures="0" errors="0" time="2.259098615">
+    <testcase name="Success scenario for creating a data product M(1) " status="passed" time="0.123956786"></testcase>
+    <testcase name="Success scenario for creating a data product M(2) " status="passed" time="0.124396445"></testcase>
+    <testcase name="Success scenario for creating a data product M(3) " status="passed" time="0.124815045"></testcase>
+    <testcase name="Success scenario for creating a data product M(4) " status="passed" time="0.12313"></testcase>
+    <testcase name="Success scenario for creating a data product M(5) " status="passed" time="0.124274741"></testcase>
+    <testcase name="Success scenario for creating a data product M(6) " status="passed" time="0.209993892"></testcase>
+    <testcase name="Success scenario for creating a data product M(7) " status="passed" time="0.124673654"></testcase>
+    <testcase name="Success scenario for creating a data product M(8) " status="passed" time="0.123645363"></testcase>
+    <testcase name="Success scenario for creating a data product M(9) " status="passed" time="0.124200271"></testcase>
+    <testcase name="Success scenario for creating a data product M(10) " status="passed" time="0.123646482"></testcase>
+    <testcase name="Create two data products with the same name E1(1) " status="passed" time="0.236547647"></testcase>
+    <testcase name="Fail scenario for creating a data product E2(1) " status="passed" time="0.115357295"></testcase>
+    <testcase name="Fail scenario for creating a data product E2(2) " status="passed" time="0.115826452"></testcase>
+    <testcase name="Fail scenario for creating a data product E2(3) " status="passed" time="0.112887713"></testcase>
+    <testcase name="Fail scenario for creating a data product E2(4) " status="passed" time="0.117524557"></testcase>
+    <testcase name="Fail scenario for creating a data product E2(5) " status="passed" time="0.113385522"></testcase>
+    <testcase name="Fail scenario for creating a data product E2(6) " status="passed" time="0.113899834"></testcase>
+  </testsuite>
+</testsuites>
