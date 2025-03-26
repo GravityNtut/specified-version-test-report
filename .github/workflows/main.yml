@@ -50,19 +50,12 @@ jobs:
           token: ${{ secrets.RUN_TOKEN }}
           path: test_code/e2e-tests
           ref: GN-206_specified_version_test
-
-      - name: Install dependencies
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y libxml2-utils
           
       - uses: earthly/actions-setup@v1
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           version: "latest"
-      - uses: earthly/actions-setup@v1
-        with:
-          version: v0.8.14
+
       - name: Docker Login
         run: | 
           docker login --username "${{ secrets.DOCKERHUB_USERNAME }}" --password "${{ secrets.DOCKERHUB_TOKEN }}"
