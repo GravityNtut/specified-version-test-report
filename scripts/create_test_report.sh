@@ -1,5 +1,10 @@
 #!/bin/bash
-# run this file after running run_all.sh
+
+# $1 nats_jetstream_version
+# $2 gravity_dispatcher_version
+# $3 atomic_version
+# $4 gravity_adapter_mssql_version
+# $5 gravity_sdk_version
 
 report_path=test_reports/test_report_$(date +%Y%m%d%H%M)
 # cli
@@ -21,6 +26,15 @@ base_url="https://github.com/GravityNtut/specified-version-test-report/blob/main
 cat <<EOT > $output_file
 # Test Summary
 To learn how to view the test report, you can refer to [this page](https://github.com/GravityNtut/specified-version-test-report/blob/main/HOW_TO_USE.md).
+
+## Service Version
+| Service | Version |
+|---------|---------|
+| nats-jetstream | $1 |
+| gravity-dispatcher | $2 |
+| atomic | $3 |
+| gravity-adapter-mssql | $4 |
+| gravity-sdk | $5 |
 EOT
 
 for folder in $(find ./$report_path/ -mindepth 1 -maxdepth 1 -type d -name "*-test-report"); do
