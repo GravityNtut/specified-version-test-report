@@ -20,8 +20,8 @@ GRAVITY_DISPATCHER=$(jq -r '.gravity["gravity-dispatcher"]' "$CONFIG_FILE")
 ATOMIC=$(jq -r '.gravity["atomic"]' "$CONFIG_FILE")
 GRAVITY_ADAPTER_MSSQL=$(jq -r '.gravity["gravity_adapter_mssql"]' "$CONFIG_FILE")
 
-echo "::set-output name=gravity_sdk_version::$GRAVITY_SDK"
-echo "::set-output name=nats_jetstream_version::$NATS_JETSTREAM"
-echo "::set-output name=gravity_dispatcher_version::$GRAVITY_DISPATCHER"
-echo "::set-output name=atomic_version::$ATOMIC"
-echo "::set-output name=gravity_adapter_mssql_version::$GRAVITY_ADAPTER_MSSQL"
+echo "gravity_sdk_version=$GRAVITY_SDK"
+echo "nats_jetstream_version=$NATS_JETSTREAM"
+echo "gravity_dispatcher_version=$GRAVITY_DISPATCHER"
+echo "atomic_version=$ATOMIC"
+echo "gravity_adapter_mssql_version=$GRAVITY_ADAPTER_MSSQL"

@@ -12,7 +12,7 @@ permissions:
   contents: write
 
 jobs:
-  Run-tests:
+  Get-service-versions:
     environment: Specified_Version_Test
     runs-on: 
       - self-hosted
@@ -26,14 +26,14 @@ jobs:
         run: |
           chmod +x scripts/get_version.sh
           OUTPUT=$(scripts/get_version.sh ${{github.event.inputs.version_number}})
-          echo "$OUTPUT"
+          echo "$OUTPUT" >> $GITHUB_OUTPUT
 
-      - name: Trigger Main Workflow
-        uses: ./.github/workflows/main.yml
-        with:
-          nats_jetstream_version: ${{ steps.get_each_version_from_config_file.outputs.nats_jetstream_version }}
-          gravity_dispatcher_version: ${{ steps.get_each_version_from_config_file.outputs.gravity_dispatcher_version }}
-          atomic_version: ${{ steps.get_each_version_from_config_file.outputs.atomic_version }}
-          gravity_adapter_mssql_version: ${{ steps.get_each_version_from_config_file.outputs.gravity_adapter_mssql_version }}
-          gravity_sdk_version: ${{ steps.get_each_version_from_config_file.outputs.gravity_sdk_version }}
+  Trigger Main Workflow:
+    uses: ./.github/workflows/main.yml
+    with:
+      nats_jetstream_version: ${{ steps.get_each_version_from_config_file.outputs.nats_jetstream_version }}
+      gravity_dispatcher_version: ${{ steps.get_each_version_from_config_file.outputs.gravity_dispatcher_version }}
+      atomic_version: ${{ steps.get_each_version_from_config_file.outputs.atomic_version }}
+      gravity_adapter_mssql_version: ${{ steps.get_each_version_from_config_file.outputs.gravity_adapter_mssql_version }}
+      gravity_sdk_version: ${{ steps.get_each_version_from_config_file.outputs.gravity_sdk_version }}
           
