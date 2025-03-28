@@ -28,7 +28,7 @@ jobs:
           OUTPUT=$(scripts/get_version.sh ${{github.event.inputs.version_number}})
           echo "$OUTPUT" >> $GITHUB_ENV
 
-  Trigger Main Workflow:
+  Trigger-main-workflow:
     uses: ./.github/workflows/main.yml
     with:
       nats_jetstream_version: $nats_jetstream_version
