@@ -19,6 +19,9 @@ jobs:
       - tests
 
     steps: 
+      - name: Checkout code
+        uses: actions/checkout@v4
+
       - name: get_each_version_from_config_file
         run: |
           chmod +x scripts/get_version.sh
