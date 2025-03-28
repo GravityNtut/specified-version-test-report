@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="" tests="5" skipped="0" failures="1" errors="0" time="3.959917315">
+  <testsuite name="Data Product list" tests="5" skipped="0" failures="1" errors="0" time="3.959782219">
+    <testcase name="Success scenario for list of data products M(1) " status="passed" time="1.115684222"></testcase>
+    <testcase name="Success scenario for list of data products M(2) [skipped]" status="failed" time="0.006208715">
+      <failure message="Step NATS has been opened: before scenario hook failed: skipped"></failure>
+      <error message="Step Dispatcher has been opened" type="skipped"></error>
+      <error message="Step Create &#34;&#39;100&#39;&#34; data products with &#34;&#39;drink&#39;&#34; using parameters &#34;&#39;&#34;&#34;&#39;&#34; &#34;&#39;[true]&#39;&#34;" type="skipped"></error>
+      <error message="Step Create &#34;&#39;1&#39;&#34; rulesets for &#34;&#39;drink&#39;&#34;" type="skipped"></error>
+      <error message="Step Publish the event &#34;&#39;1&#39;&#34; times" type="skipped"></error>
+      <error message="Step Listing all data products using gravity-cli" type="skipped"></error>
+      <error message="Step The CLI returns &#34;&#39;100&#39;&#34; data products. The final product has the name &#34;&#39;drink&#39;&#34;, with &#34;&#39;1&#39;&#34; rulesets, and a total of &#34;&#39;1&#39;&#34; events published. Each data product has a description of &#34;&#39;&#34;&#34;&#39;&#34; and an enabled status of &#34;&#39;[true]&#39;&#34;" type="skipped"></error>
+    </testcase>
+    <testcase name="Success scenario for list of data products M(3) " status="passed" time="1.4258263979999999"></testcase>
+    <testcase name="Success scenario for list of data products M(4) " status="passed" time="1.211746461"></testcase>
+    <testcase name="Fail scenario for list of data products E1(1) " status="passed" time="0.118223368"></testcase>
+  </testsuite>
+</testsuites>
