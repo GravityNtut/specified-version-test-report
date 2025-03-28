@@ -23,6 +23,27 @@ on:
         description: 'Gravity SDK Version'
         required: true
         type: string
+    secrets:
+      GITHUB_TOKEN:
+        description: 'GitHub Token'
+        required: true
+        type: string
+      RUN_TOKEN:
+        description: 'Run Token'
+        required: true
+        type: string
+      DOCKERHUB_USERNAME:
+        description: 'Dockerhub Username'
+        required: true
+        type: string
+      DOCKERHUB_TOKEN:
+        description: 'Dockerhub Token'
+        required: true
+        type: string
+      GHCR_USERNAME:
+        description: 'GHCR Username'
+        required: true
+        type: string
 
   workflow_dispatch:
     inputs:
