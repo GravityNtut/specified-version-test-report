@@ -19,7 +19,7 @@ jobs:
       - tests
 
     steps: 
-      - name: Get Each Version From Config File
+      - name: get_each_version_from_config_file
         run: |
           chmod +x scripts/get_version.sh
           OUTPUT = $(scripts/get_version.sh ${{github.event.inputs.version_number}})
