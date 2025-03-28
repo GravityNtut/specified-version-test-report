@@ -37,7 +37,6 @@ jobs:
       gravity_adapter_mssql_version: $gravity_adapter_mssql_version
       gravity_sdk_version: $gravity_sdk_version
     secrets:
-      GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
       RUN_TOKEN: ${{secrets.RUN_TOKEN}}
       DOCKERHUB_USERNAME: ${{secrets.DOCKERHUB_USERNAME}}
       DOCKERHUB_TOKEN: ${{secrets.DOCKERHUB_TOKEN}}
