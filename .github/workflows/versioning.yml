@@ -28,9 +28,9 @@ jobs:
       - name: Trigger Main Workflow
         uses: ./.github/workflows/main.yml
         with:
-          nats_jetstream_version: ${{ steps.Get Each Version From Config File.outputs.nats_jetstream_version }}
-          gravity_dispatcher_version: ${{ steps.Get Each Version From Config File.outputs.gravity_dispatcher_version }}
-          atomic_version: ${{ steps.Get Each Version From Config File.outputs.atomic_version }}
-          gravity_adapter_mssql_version: ${{ steps.Get Each Version From Config File.outputs.gravity_adapter_mssql_version }}
-          gravity_sdk_version: ${{ steps.Get Each Version From Config File.outputs.gravity_sdk_version }}
+          nats_jetstream_version: ${{ steps.get_each_version_from_config_file.outputs.nats_jetstream_version }}
+          gravity_dispatcher_version: ${{ steps.get_each_version_from_config_file.outputs.gravity_dispatcher_version }}
+          atomic_version: ${{ steps.get_each_version_from_config_file.outputs.atomic_version }}
+          gravity_adapter_mssql_version: ${{ steps.get_each_version_from_config_file.outputs.gravity_adapter_mssql_version }}
+          gravity_sdk_version: ${{ steps.get_each_version_from_config_file.outputs.gravity_sdk_version }}
           
