@@ -1,6 +1,29 @@
 name: Run Specified Version Test
 
 on:
+  workflow_call:
+    inputs:
+      nats_jetstream_version:
+        description: 'NATS JetStream Version'
+        required: true
+        type: string
+      gravity_dispatcher_version:
+        description: 'Gravity Dispatcher Version'
+        required: true
+        type: string
+      atomic_version:
+        description: 'Atomic Version'
+        required: true
+        type: string
+      gravity_adapter_mssql_version:
+        description: 'Gravity Adapter Version'
+        required: true
+        type: string
+      gravity_sdk_version:
+        description: 'Gravity SDK Version'
+        required: true
+        type: string
+
   workflow_dispatch:
     inputs:
       nats_jetstream_version:

@@ -1,0 +1,36 @@
+name: Run Versioning Test
+
+on:
+  workflow_dispatch:
+    inputs: 
+      version_number:
+        description: 'Version Number'
+        required: true
+        default: 'v1.0'
+
+permissions:
+  contents: write
+
+jobs:
+  Run-tests:
+    environment: Specified_Version_Test
+    runs-on: 
+      - self-hosted
+      - tests
+
+    steps: 
+      - name: Get Each Version From Config File
+        run: |
+          chmod +x scripts/get_version.sh
+          OUTPUT = $(scripts/get_version.sh ${{github.event.inputs.version_number}})
+          echo "$OUTPUT"
+
+      - name: Trigger Main Workflow
+        uses: ./.github/workflows/main.yml
+        with:
+          nats_jetstream_version: ${{ steps.Get Each Version From Config File.outputs.nats_jetstream_version }}
+          gravity_dispatcher_version: ${{ steps.Get Each Version From Config File.outputs.gravity_dispatcher_version }}
+          atomic_version: ${{ steps.Get Each Version From Config File.outputs.atomic_version }}
+          gravity_adapter_mssql_version: ${{ steps.Get Each Version From Config File.outputs.gravity_adapter_mssql_version }}
+          gravity_sdk_version: ${{ steps.Get Each Version From Config File.outputs.gravity_sdk_version }}
+          
