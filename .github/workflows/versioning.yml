@@ -25,7 +25,7 @@ jobs:
       - name: get_each_version_from_config_file
         run: |
           chmod +x scripts/get_version.sh
-          OUTPUT = $(scripts/get_version.sh ${{github.event.inputs.version_number}})
+          OUTPUT=$(scripts/get_version.sh ${{github.event.inputs.version_number}})
           echo "$OUTPUT"
 
       - name: Trigger Main Workflow
