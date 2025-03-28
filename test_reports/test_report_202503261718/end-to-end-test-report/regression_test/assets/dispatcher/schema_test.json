@@ -1,8 +1,0 @@
-{
-	"Id": { "type": "int" },
-	"Name": { "type": "string" },
-	"Price": { "type": "float" },
-	"Stock": { "type": "int" }, 
-	"Obsolete": { "type": "bool"}, 
-	"ModTime": { "type": "time"}
-}

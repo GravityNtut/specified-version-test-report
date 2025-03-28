@@ -1,0 +1,43 @@
+name: Create Version Config
+
+on:
+  workflow_dispatch:
+    inputs: 
+      config_file_location:
+        description: 'Config file at which folder(time)'
+        required: true
+        default: '202503281452'
+      version_number:
+        description: 'Version Number'
+        required: true
+        default: 'v1.0'
+
+permissions:
+  contents: write
+
+jobs:
+  Run-tests:
+    environment: Specified_Version_Test
+    runs-on: 
+      - self-hosted
+      - tests
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name: Create Version Config File
+        run: |
+          chmod +x scripts/create_version_config.sh
+          scripts/create_version_config.sh ${{github.event.inputs.config_file_location}} ${{github.event.inputs.version_number}}
+
+      - name: Configure Git
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Commit and push changes
+        run: |
+          git add configs/*
+          git commit -m "Create version config file [skip ci]" || echo "No changes to commit"
+          git push origin main
