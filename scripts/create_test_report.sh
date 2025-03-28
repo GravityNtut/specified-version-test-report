@@ -5,8 +5,9 @@
 # $3 atomic_version
 # $4 gravity_adapter_mssql_version
 # $5 gravity_sdk_version
+# $6 test start time
 
-report_path=test_reports/test_report_$(date +%Y%m%d%H%M)
+report_path=test_reports/test_report_$6
 # cli
 mkdir -p $report_path/cli-test-report
 rm -rf $report_path/cli-test-report/*

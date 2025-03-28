@@ -35,6 +35,9 @@ jobs:
       - tests
 
     steps:
+      - name: Set Variable
+        run: |
+          echo "TIME=$(date +%Y%m%d%H%M)" >> $GITHUB_ENV
       - name: Checkout code
         uses: actions/checkout@v4
 
@@ -73,9 +76,13 @@ jobs:
 
       - name: Create Test Report
         run: |
-          echo "Generating test report"
           chmod +x scripts/create_test_report.sh
-          scripts/create_test_report.sh ${{github.event.inputs.nats_jetstream_version}} ${{github.event.inputs.gravity_dispatcher_version}} ${{github.event.inputs.atomic_version}} ${{github.event.inputs.gravity_adapter_mssql_version}} ${{github.event.inputs.gravity_sdk_version}}
+          scripts/create_test_report.sh ${{github.event.inputs.nats_jetstream_version}} ${{github.event.inputs.gravity_dispatcher_version}} ${{github.event.inputs.atomic_version}} ${{github.event.inputs.gravity_adapter_mssql_version}} ${{github.event.inputs.gravity_sdk_version}} $TIME
+
+      - name: Create Config File
+        run: |
+          chmod +x scripts/create_config.sh
+          scripts/create_config.sh ${{github.event.inputs.nats_jetstream_version}} ${{github.event.inputs.gravity_dispatcher_version}} ${{github.event.inputs.atomic_version}} ${{github.event.inputs.gravity_adapter_mssql_version}} ${{github.event.inputs.gravity_sdk_version}} $TIME
 
       - name: Configure Git
         run: |
