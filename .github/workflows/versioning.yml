@@ -29,10 +29,11 @@ jobs:
 
       - name: get_each_version_from_config_file
         run: |
-          chmod +x scripts/get_version.sh
-          OUTPUT=$(scripts/get_version.sh ${{github.event.inputs.version_number}})
-          echo $OUTPUT >> $GITHUB_OUTPUT
-          echo "output is: $OUTPUT"
+          "gravity_sdk_version=v2.0.7" >> $GITHUB_OUTPUT
+          "nats_jetstream_version=v1.3.21-20250201" >> $GITHUB_OUTPUT
+          "gravity_dispatcher_version=v0.0.31-20250220" >> $GITHUB_OUTPUT
+          a"tomic_version=v1.0.0-20250301-ubi" >> $GITHUB_OUTPUT
+          "gravity_adapter_mssql_version=v3.0.15-20250201" >> $GITHUB_OUTPUT
 
   Trigger-main-workflow:
     needs: Get-service-versions
