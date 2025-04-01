@@ -17,7 +17,12 @@ jobs:
     runs-on: 
       - self-hosted
       - tests
-
+    outputs:
+      nats_jetstream_version: ${{ steps.get_version.outputs.nats_jetstream_version }}
+      gravity_dispatcher_version: ${{ steps.get_version.outputs.gravity_dispatcher_version }}
+      atomic_version: ${{ steps.get_version.outputs.atomic_version }}
+      gravity_adapter_mssql_version: ${{ steps.get_version.outputs.gravity_adapter_mssql_version }}
+      gravity_sdk_version: ${{ steps.get_version.outputs.gravity_sdk_version }}
     steps: 
       - name: Checkout code
         uses: actions/checkout@v4
@@ -26,18 +31,18 @@ jobs:
         run: |
           chmod +x scripts/get_version.sh
           OUTPUT=$(scripts/get_version.sh ${{github.event.inputs.version_number}})
-          echo $OUTPUT >> $GITHUB_ENV
-          echo "output is: " + $OUTPUT
+          echo $OUTPUT >> $GITHUB_OUTPUT
+          echo "output is: $OUTPUT"
 
   Trigger-main-workflow:
     needs: Get-service-versions
     uses: ./.github/workflows/main.yml
     with:
-      nats_jetstream_version: $nats_jetstream_version
-      gravity_dispatcher_version: $gravity_dispatcher_version
-      atomic_version: $atomic_version
-      gravity_adapter_mssql_version: $gravity_adapter_mssql_version
-      gravity_sdk_version: $gravity_sdk_version
+      nats_jetstream_version: needs.Get-service-versions.outputs.nats_jetstream_version
+      gravity_dispatcher_version: needs.Get-service-versions.outputs.gravity_dispatcher_version
+      atomic_version: needs.Get-service-versions.outputs.atomic_version
+      gravity_adapter_mssql_version: needs.Get-service-versions.outputs.gravity_adapter_mssql_version
+      gravity_sdk_version: needs.Get-service-versions.outputs.gravity_sdk_version
     secrets:
       RUN_TOKEN: ${{secrets.RUN_TOKEN}}
       DOCKERHUB_USERNAME: ${{secrets.DOCKERHUB_USERNAME}}
