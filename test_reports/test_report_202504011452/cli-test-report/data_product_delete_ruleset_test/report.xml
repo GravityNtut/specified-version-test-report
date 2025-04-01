@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="" tests="4" skipped="0" failures="0" errors="0" time="0.508553716">
+  <testsuite name="Data Product ruleset delete" tests="4" skipped="0" failures="0" errors="0" time="0.50843915">
+    <testcase name="Success scenario for the deletion of a data product ruleset M(1) " status="passed" time="0.122979889"></testcase>
+    <testcase name="Fail scenario for the deletion of a non-existent Data Product ruleset E1(1) " status="passed" time="0.12640763"></testcase>
+    <testcase name="Fail scenario for the deletion of a non-existent Data Product ruleset E1(2) " status="passed" time="0.127193472"></testcase>
+    <testcase name="Fail scenario for the deletion of a non-existent Data Product ruleset E1(3) " status="passed" time="0.124962181"></testcase>
+  </testsuite>
+</testsuites>
