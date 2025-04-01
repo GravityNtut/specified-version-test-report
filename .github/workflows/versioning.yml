@@ -18,11 +18,11 @@ jobs:
       - self-hosted
       - tests
     outputs:
-      nats_jetstream_version: v1.3.21-20250201
-      gravity_dispatcher_version: v0.0.31-20250220
-      atomic_version: v1.0.0-20250301-ubi
-      gravity_adapter_mssql_version: v3.0.15-20250201
-      gravity_sdk_version: v2.0.7
+      nats_jetstream_version: ${{ steps.Get_each_version_from_config_file.outputs.nats_jetstream_version }}
+      gravity_dispatcher_version: ${{ steps.Get_each_version_from_config_file.outputs.gravity_dispatcher_version }}
+      atomic_version:  ${{ steps.Get_each_version_from_config_file.outputs.atomic_version }}
+      gravity_adapter_mssql_version:  ${{ steps.Get_each_version_from_config_file.outputs.gravity_adapter_mssql_version }}
+      gravity_sdk_version:  ${{ steps.Get_each_version_from_config_file.outputs.gravity_sdk_version }}
     steps: 
       - name: Checkout code
         uses: actions/checkout@v4
@@ -46,13 +46,6 @@ jobs:
           echo "gravity_dispatcher_version=$GRAVITY_DISPATCHER" >> $GITHUB_OUTPUT
           echo "atomic_version=$ATOMIC" >> $GITHUB_OUTPUT
           echo "gravity_adapter_mssql_version=$GRAVITY_ADAPTER_MSSQL" >> $GITHUB_OUTPUT
-
-          echo parsed versions:
-          echo "gravity_sdk_version=$GRAVITY_SDK"
-          echo "nats_jetstream_version=$NATS_JETSTREAM"
-          echo "gravity_dispatcher_version=$GRAVITY_DISPATCHER"
-          echo "atomic_version=$ATOMIC"
-          echo "gravity_adapter_mssql_version=$GRAVITY_ADAPTER_MSSQL"
 
   Trigger-main-workflow:
     needs: Get-service-versions
