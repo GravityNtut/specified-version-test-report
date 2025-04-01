@@ -27,9 +27,14 @@ jobs:
           chmod +x scripts/get_version.sh
           OUTPUT=$(scripts/get_version.sh ${{github.event.inputs.version_number}})
           echo $OUTPUT >> $GITHUB_ENV
-          echo $GITHUB_ENV
+          echo $nats_jetstream_version
+          echo $gravity_dispatcher_version
+          echo $atomic_version
+          echo $gravity_adapter_mssql_version
+          echo $gravity_sdk_version
 
   Trigger-main-workflow:
+    needs: Get-service-versions
     uses: ./.github/workflows/main.yml
     with:
       nats_jetstream_version: $nats_jetstream_version
