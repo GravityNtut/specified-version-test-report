@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="" tests="63" skipped="0" failures="22" errors="0" time="93.378324028">
+  <testsuite name="Data Product publish" tests="63" skipped="0" failures="22" errors="0" time="93.376711573">
+    <testcase name="Publish for data product of the event (Success scenario) M(1) " status="passed" time="2.141386164"></testcase>
+    <testcase name="Publish for data product of the event (Success scenario) M(2) " status="passed" time="2.143739871"></testcase>
+    <testcase name="Publish for data product of the event (Success scenario) M(3) " status="passed" time="2.138934703"></testcase>
+    <testcase name="Publish for data product of the event (Success scenario) M(4) " status="passed" time="2.146336875"></testcase>
+    <testcase name="Publish for data product of the event (Success scenario) M(5) " status="passed" time="2.144171205"></testcase>
+    <testcase name="Publish for data product of the event (Success scenario) M(6) " status="passed" time="2.149113217"></testcase>
+    <testcase name="Publish for data product of the event (Success scenario) M(7) " status="passed" time="2.146894231"></testcase>
+    <testcase name="Publish for data product of the event (Success scenario) M(8) " status="passed" time="2.14544326"></testcase>
+    <testcase name="Publish for data product of the event (Success scenario) M(9) " status="passed" time="2.146578835"></testcase>
+    <testcase name="Publish for data product of the event (Success scenario) M(10) " status="passed" time="2.147164313"></testcase>
+    <testcase name="Publish for data product of the event (Success scenario) M(11) " status="passed" time="2.145454855"></testcase>
+    <testcase name="Publish for data product of the event (Success scenario) M(12) " status="passed" time="2.147160314"></testcase>
+    <testcase name="Publish for data product of the event (Success scenario) M(13) " status="passed" time="2.145581575"></testcase>
+    <testcase name="Publish for data product of the event (Success scenario) M(14) " status="passed" time="2.145866349"></testcase>
+    <testcase name="Publish for data product of the event (Success scenario) M(15) " status="passed" time="2.142918554"></testcase>
+    <testcase name="Publish for data product of the event (Success scenario) M(16) " status="passed" time="2.146466749"></testcase>
+    <testcase name="Publish for data product of the event (Success scenario) M(17) " status="passed" time="2.146277078"></testcase>
+    <testcase name="Publish for data product of the event (Success scenario) M(18) " status="passed" time="2.147639153"></testcase>
+    <testcase name="Publish for data product of the event (Success scenario) M(19) " status="passed" time="2.142732781"></testcase>
+    <testcase name="Publish for data product of the event (Success scenario) M(20) " status="passed" time="2.147143731"></testcase>
+    <testcase name="Publish for data product of the event (Success scenario) M(21) " status="passed" time="2.146772572"></testcase>
+    <testcase name="Publish for data product of the event (Success scenario) M(22) " status="passed" time="2.145762349"></testcase>
+    <testcase name="Publish for data product of the event (Success scenario) M(23) " status="passed" time="2.145357388"></testcase>
+    <testcase name="Publish for data product of the event (Success scenario) M(24) " status="passed" time="2.145582116"></testcase>
+    <testcase name="Publish for data product of the event (Success scenario) M(25) " status="passed" time="2.694411636"></testcase>
+    <testcase name="Publish for data product of the event (Success scenario) M(26) " status="passed" time="2.147502616"></testcase>
+    <testcase name="Publish for data product of the event (Success scenario) M(27) " status="passed" time="2.146388098"></testcase>
+    <testcase name="Publish for data product of the event (Success scenario) M(28) " status="passed" time="2.145504629"></testcase>
+    <testcase name="Publish for data product of the event (Success scenario) M(29) " status="passed" time="2.144975151"></testcase>
+    <testcase name="Publish for data product of the event (Success scenario) M(30) " status="passed" time="2.139095182"></testcase>
+    <testcase name="Publish for data product of the event (Success scenario) M(31) " status="passed" time="2.144316962"></testcase>
+    <testcase name="Publish for data product of the event (Success scenario) M(32) " status="passed" time="2.146483654"></testcase>
+    <testcase name="Publish for data product of the event (Success scenario) M(33) " status="passed" time="2.142315476"></testcase>
+    <testcase name="Publish for data product of the event (Success scenario) M(34) " status="passed" time="2.145267647"></testcase>
+    <testcase name="Publish for data product of the event (Success scenario) M(35) " status="passed" time="2.1472050129999998"></testcase>
+    <testcase name="Similar to the successful scenario, but after publishing, update the ruleset to enabled first, then update the data product to enabled E1(1) " status="passed" time="0.129109499"></testcase>
+    <testcase name="publish for data product of the event (failure scenario for the publish command) E2(1) " status="passed" time="0.630478211"></testcase>
+    <testcase name="publish for data product of the event (failure scenario for the publish command) E2(2) " status="failed" time="0.127165272">
+      <failure message="Step CLI returns create failed: publish should be failed"></failure>
+    </testcase>
+    <testcase name="publish for data product of the event (failure scenario for the publish command) E2(3) " status="failed" time="0.123747201">
+      <failure message="Step CLI returns create failed: publish should be failed"></failure>
+    </testcase>
+    <testcase name="publish for data product of the event (failure scenario for the publish command) E2(4) " status="failed" time="0.125446103">
+      <failure message="Step CLI returns create failed: publish should be failed"></failure>
+    </testcase>
+    <testcase name="The command executes successfully but does not publish to the specified DP E3(1) " status="failed" time="0.216904671">
+      <failure message="Step Query GVT_default_DP_&#34;&#39;drink&#39;&#34; has no &#34;&#39;drinkEvent&#39;&#34;: expected not publish in GVT_default_DP，but now in GVT_default_DP"></failure>
+      <error message="Step Using NATS Jetstream to query GVT_default has a event with payload &#34;&#39;&#39;{&#34;name&#34;:&#34;test&#34;}&#39;&#39;&#34; and type is &#34;&#39;drinkEvent&#39;&#34;" type="skipped"></error>
+    </testcase>
+    <testcase name="The command executes successfully but does not publish to the specified DP E3(2) " status="failed" time="0.220600194">
+      <failure message="Step Query GVT_default_DP_&#34;&#39;drink&#39;&#34; has no &#34;&#39;drinkEvent&#39;&#34;: expected not publish in GVT_default_DP，but now in GVT_default_DP"></failure>
+      <error message="Step Using NATS Jetstream to query GVT_default has a event with payload &#34;&#39;&#39;{&#34;name&#34;:&#34;test&#34;,&#34;not_exist&#34;:&#34;Hi&#34;}&#39;&#39;&#34; and type is &#34;&#39;drinkEvent&#39;&#34;" type="skipped"></error>
+    </testcase>
+    <testcase name="The command executes successfully but does not publish to the specified DP E3(3) " status="failed" time="0.218955047">
+      <failure message="Step Query GVT_default_DP_&#34;&#39;drink&#39;&#34; has no &#34;&#39;drinkEvent&#39;&#34;: expected not publish in GVT_default_DP，but now in GVT_default_DP"></failure>
+      <error message="Step Using NATS Jetstream to query GVT_default has a event with payload &#34;&#39;&#39;{&#34;not_exist&#34;:&#34;Hi&#34;}&#39;&#39;&#34; and type is &#34;&#39;drinkEvent&#39;&#34;" type="skipped"></error>
+    </testcase>
+    <testcase name="The command executes successfully but does not publish to the specified DP E3(4) " status="failed" time="0.218327164">
+      <failure message="Step Query GVT_default_DP_&#34;&#39;drink&#39;&#34; has no &#34;&#39;drinkEvent&#39;&#34;: expected not publish in GVT_default_DP，but now in GVT_default_DP"></failure>
+      <error message="Step Using NATS Jetstream to query GVT_default has a event with payload &#34;&#39;&#39;{}&#39;&#39;&#34; and type is &#34;&#39;drinkEvent&#39;&#34;" type="skipped"></error>
+    </testcase>
+    <testcase name="The command executes successfully but does not publish to the specified DP E3(5) " status="failed" time="0.218885364">
+      <failure message="Step Query GVT_default_DP_&#34;&#39;drink&#39;&#34; has no &#34;&#39;drinkEvent&#39;&#34;: expected not publish in GVT_default_DP，but now in GVT_default_DP"></failure>
+      <error message="Step Using NATS Jetstream to query GVT_default has a event with payload &#34;&#39;&#39;{&#34;name&#34;:&#34;test&#34;}&#39;&#39;&#34; and type is &#34;&#39;drinkEvent&#39;&#34;" type="skipped"></error>
+    </testcase>
+    <testcase name="The command executes successfully but does not publish to the specified DP E3(6) " status="failed" time="0.219158171">
+      <failure message="Step Query GVT_default_DP_&#34;&#39;drink&#39;&#34; has no &#34;&#39;drinkEvent&#39;&#34;: expected not publish in GVT_default_DP，but now in GVT_default_DP"></failure>
+      <error message="Step Using NATS Jetstream to query GVT_default has a event with payload &#34;&#39;&#39;{&#34;name&#34;:&#34;test&#34;,&#34;not_exist&#34;:&#34;Hi&#34;}&#39;&#39;&#34; and type is &#34;&#39;drinkEvent&#39;&#34;" type="skipped"></error>
+    </testcase>
+    <testcase name="The command executes successfully but does not publish to the specified DP E3(7) " status="failed" time="0.221203769">
+      <failure message="Step Query GVT_default_DP_&#34;&#39;drink&#39;&#34; has no &#34;&#39;drinkEvent&#39;&#34;: expected not publish in GVT_default_DP，but now in GVT_default_DP"></failure>
+      <error message="Step Using NATS Jetstream to query GVT_default has a event with payload &#34;&#39;&#39;{&#34;not_exist&#34;:&#34;Hi&#34;}&#39;&#39;&#34; and type is &#34;&#39;drinkEvent&#39;&#34;" type="skipped"></error>
+    </testcase>
+    <testcase name="The command executes successfully but does not publish to the specified DP E3(8) " status="failed" time="0.21894647">
+      <failure message="Step Query GVT_default_DP_&#34;&#39;drink&#39;&#34; has no &#34;&#39;drinkEvent&#39;&#34;: expected not publish in GVT_default_DP，but now in GVT_default_DP"></failure>
+      <error message="Step Using NATS Jetstream to query GVT_default has a event with payload &#34;&#39;&#39;{}&#39;&#39;&#34; and type is &#34;&#39;drinkEvent&#39;&#34;" type="skipped"></error>
+    </testcase>
+    <testcase name="The command executes successfully but does not publish to the specified DP E3(9) " status="passed" time="5.127740171"></testcase>
+    <testcase name="The command executes successfully but does not publish to the specified DP E3(10) [skipped]" status="failed" time="0.005484544">
+      <failure message="Step NATS has been opened: before scenario hook failed: skipped"></failure>
+      <error message="Step Dispatcher has been opened" type="skipped"></error>
+      <error message="Step Create data product &#34;&#39;drink&#39;&#34; using parameters &#34;&#39;[true]&#39;&#34;" type="skipped"></error>
+      <error message="Step &#34;&#39;drink&#39;&#34; create ruleset &#34;&#39;drinkEvent&#39;&#34; using parameters &#34;&#39;create&#39;&#34; &#34;&#39;id&#39;&#34; &#34;&#39;./assets/empty.js&#39;&#34; &#34;&#39;./assets/schema.json&#39;&#34; &#34;&#39;[true]&#39;&#34;" type="skipped"></error>
+      <error message="Step Publish Event &#34;&#39;drinkEvent&#39;&#34; using parameters &#34;&#39;&#39;{&#34;id&#34;:1,&#34;uid&#34;:1,&#34;name&#34;:&#34;test&#34;,&#34;price&#34;:100,&#34;kcal&#34;:50}&#39;&#39;&#34;" type="skipped"></error>
+      <error message="Step Query GVT_default_DP_&#34;&#39;drink&#39;&#34; has no &#34;&#39;drinkEvent&#39;&#34;" type="skipped"></error>
+      <error message="Step Using NATS Jetstream to query GVT_default has a event with payload &#34;&#39;&#39;{&#34;id&#34;:1,&#34;uid&#34;:1,&#34;name&#34;:&#34;test&#34;,&#34;price&#34;:100,&#34;kcal&#34;:50}&#39;&#39;&#34; and type is &#34;&#39;drinkEvent&#39;&#34;" type="skipped"></error>
+    </testcase>
+    <testcase name="The command executes successfully but does not publish to the specified DP E3(11) " status="failed" time="0.213302845">
+      <failure message="Step Query GVT_default_DP_&#34;&#39;drink&#39;&#34; has no &#34;&#39;drinkEvent&#39;&#34;: expected not publish in GVT_default_DP，but now in GVT_default_DP"></failure>
+      <error message="Step Using NATS Jetstream to query GVT_default has a event with payload &#34;&#39;&#39;{&#34;id&#34;:1,&#34;uid&#34;:1,&#34;name&#34;:&#34;test&#34;,&#34;price&#34;:100,&#34;kcal&#34;:50}&#39;&#39;&#34; and type is &#34;&#39;drinkEvent&#39;&#34;" type="skipped"></error>
+    </testcase>
+    <testcase name="The command executes successfully but does not publish to the specified DP E3(12) " status="failed" time="0.218653532">
+      <failure message="Step Query GVT_default_DP_&#34;&#39;drink&#39;&#34; has no &#34;&#39;drinkEvent&#39;&#34;: expected not publish in GVT_default_DP，but now in GVT_default_DP"></failure>
+      <error message="Step Using NATS Jetstream to query GVT_default has a event with payload &#34;&#39;&#39;{&#34;id&#34;:1,&#34;uid&#34;:1,&#34;name&#34;:&#34;test&#34;,&#34;price&#34;:100,&#34;kcal&#34;:50}&#39;&#39;&#34; and type is &#34;&#39;drinkEvent&#39;&#34;" type="skipped"></error>
+    </testcase>
+    <testcase name="The command executes successfully but does not publish to the specified DP E3(13) " status="failed" time="0.222919491">
+      <failure message="Step Query GVT_default_DP_&#34;&#39;drink&#39;&#34; has no &#34;&#39;drinkEvent&#39;&#34;: expected not publish in GVT_default_DP，but now in GVT_default_DP"></failure>
+      <error message="Step Using NATS Jetstream to query GVT_default has a event with payload &#34;&#39;&#39;{&#34;id&#34;:1,&#34;uid&#34;:1,&#34;name&#34;:&#34;test&#34;,&#34;price&#34;:100,&#34;kcal&#34;:50}&#39;&#39;&#34; and type is &#34;&#39;drinkEvent&#39;&#34;" type="skipped"></error>
+    </testcase>
+    <testcase name="The command executes successfully but does not publish to the specified DP E3(14) " status="failed" time="0.219654447">
+      <failure message="Step Query GVT_default_DP_&#34;&#39;drink&#39;&#34; has no &#34;&#39;drinkEvent&#39;&#34;: expected not publish in GVT_default_DP，but now in GVT_default_DP"></failure>
+      <error message="Step Using NATS Jetstream to query GVT_default has a event with payload &#34;&#39;&#39;{&#34;id&#34;:1,&#34;uid&#34;:1,&#34;name&#34;:&#34;test&#34;,&#34;price&#34;:100,&#34;kcal&#34;:50}&#39;&#39;&#34; and type is &#34;&#39;drinkEvent&#39;&#34;" type="skipped"></error>
+    </testcase>
+    <testcase name="The command executes successfully but does not publish to the specified DP E3(15) " status="failed" time="0.218203411">
+      <failure message="Step Query GVT_default_DP_&#34;&#39;drink&#39;&#34; has no &#34;&#39;drinkEvent&#39;&#34;: expected not publish in GVT_default_DP，but now in GVT_default_DP"></failure>
+      <error message="Step Using NATS Jetstream to query GVT_default has a event with payload &#34;&#39;&#39;{&#34;id&#34;:1,&#34;uid&#34;:1,&#34;name&#34;:&#34;test&#34;,&#34;price&#34;:100,&#34;kcal&#34;:50}&#39;&#39;&#34; and type is &#34;&#39;drinkEvent&#39;&#34;" type="skipped"></error>
+    </testcase>
+    <testcase name="The command executes successfully but does not publish to the specified DP E3(16) " status="failed" time="0.218696825">
+      <failure message="Step Query GVT_default_DP_&#34;&#39;drink&#39;&#34; has no &#34;&#39;drinkEvent&#39;&#34;: expected not publish in GVT_default_DP，but now in GVT_default_DP"></failure>
+      <error message="Step Using NATS Jetstream to query GVT_default has a event with payload &#34;&#39;&#39;{&#34;id&#34;:1,&#34;uid&#34;:1,&#34;name&#34;:&#34;test&#34;,&#34;price&#34;:100,&#34;kcal&#34;:50}&#39;&#39;&#34; and type is &#34;&#39;drinkEvent&#39;&#34;" type="skipped"></error>
+    </testcase>
+    <testcase name="The command executes successfully but does not publish to the specified DP E3(17) " status="failed" time="0.221576271">
+      <failure message="Step Query GVT_default_DP_&#34;&#39;drink&#39;&#34; has no &#34;&#39;drinkEvent&#39;&#34;: expected not publish in GVT_default_DP，but now in GVT_default_DP"></failure>
+      <error message="Step Using NATS Jetstream to query GVT_default has a event with payload &#34;&#39;&#39;{&#34;id&#34;:1,&#34;uid&#34;:1,&#34;name&#34;:&#34;test&#34;,&#34;price&#34;:100,&#34;kcal&#34;:50}&#39;&#39;&#34; and type is &#34;&#39;drinkEvent&#39;&#34;" type="skipped"></error>
+    </testcase>
+    <testcase name="The command executes successfully but does not publish to the specified DP E3(18) " status="passed" time="5.128475346"></testcase>
+    <testcase name="The command executes successfully but does not publish to the specified DP E3(19) " status="failed" time="0.216328387">
+      <failure message="Step Query GVT_default_DP_&#34;&#39;drink&#39;&#34; has no &#34;&#39;drinkEvent&#39;&#34;: expected not publish in GVT_default_DP，but now in GVT_default_DP"></failure>
+      <error message="Step Using NATS Jetstream to query GVT_default has a event with payload &#34;&#39;&#39;{&#34;id&#34;:1,&#34;uid&#34;:1,&#34;name&#34;:&#34;test&#34;,&#34;price&#34;:100,&#34;kcal&#34;:50}&#39;&#39;&#34; and type is &#34;&#39;drinkEvent&#39;&#34;" type="skipped"></error>
+    </testcase>
+    <testcase name="The command executes successfully but does not publish to the specified DP E3(20) " status="failed" time="0.219365352">
+      <failure message="Step Query GVT_default_DP_&#34;&#39;drink&#39;&#34; has no &#34;&#39;drinkEvent&#39;&#34;: expected not publish in GVT_default_DP，but now in GVT_default_DP"></failure>
+      <error message="Step Using NATS Jetstream to query GVT_default has a event with payload &#34;&#39;&#39;{&#34;id&#34;:1,&#34;uid&#34;:1,&#34;name&#34;:&#34;test&#34;,&#34;price&#34;:100,&#34;kcal&#34;:50}&#39;&#39;&#34; and type is &#34;&#39;drinkEvent&#39;&#34;" type="skipped"></error>
+    </testcase>
+    <testcase name="publish for data product of the event (The same event is published to multiple data products) E4(1) " status="passed" time="0.222880927"></testcase>
+    <testcase name="publish for data product of the event (Continuously publish two events with the same PK value, but the number and content of other fields are different.) E5(1) " status="passed" time="0.239110117"></testcase>
+    <testcase name="verify that payloads are not combined during rapid consecutive event publishing E6(1) " status="failed" time="0.460923817">
+      <failure message="Step Query GVT_default_DP_drink has 3 events in sequence: {&#34;id&#34;:1}, {&#34;id&#34;:2}, and {&#34;id&#34;:3}: payload2 is not matched, expected: {&#34;id&#34;:2}, actual: {&#34;name&#34;:&#34;test&#34;}"></failure>
+    </testcase>
+  </testsuite>
+</testsuites>

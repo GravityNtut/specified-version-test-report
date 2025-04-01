@@ -1,0 +1,11 @@
+{
+    "package": {
+        "gravity-sdk": "v2.0.7"
+    },
+    "gravity": {
+        "nats-jetstream": "v1.3.21-20250201",
+        "gravity-dispatcher": "v0.0.31-20250220",
+        "atomic": "v1.0.0-20250301-ubi",
+        "gravity_adapter_mssql": "v3.0.15-20250201"
+    }
+}
