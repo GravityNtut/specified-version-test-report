@@ -47,6 +47,13 @@ jobs:
           echo "atomic_version=$ATOMIC" >> $GITHUB_OUTPUT
           echo "gravity_adapter_mssql_version=$GRAVITY_ADAPTER_MSSQL" >> $GITHUB_OUTPUT
 
+          echo parsed versions:
+          echo "gravity_sdk_version=$GRAVITY_SDK"
+          echo "nats_jetstream_version=$NATS_JETSTREAM"
+          echo "gravity_dispatcher_version=$GRAVITY_DISPATCHER"
+          echo "atomic_version=$ATOMIC"
+          echo "gravity_adapter_mssql_version=$GRAVITY_ADAPTER_MSSQL"
+
   Trigger-main-workflow:
     needs: Get-service-versions
     uses: ./.github/workflows/main.yml
