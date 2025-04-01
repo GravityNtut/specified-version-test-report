@@ -37,11 +37,11 @@ jobs:
     needs: Get-service-versions
     uses: ./.github/workflows/main.yml
     with:
-      nats_jetstream_version: v1.3.21-20250201
-      gravity_dispatcher_version: v0.0.31-20250220
-      atomic_version: v1.0.0-20250301-ubi
-      gravity_adapter_mssql_version: v3.0.15-20250201
-      gravity_sdk_version: v2.0.7
+      nats_jetstream_version: ${{needs.Get-service-versions.outputs.nats_jetstream_version}}
+      gravity_dispatcher_version: ${{needs.Get-service-versions.outputs.gravity_dispatcher_version}}
+      atomic_version: ${{needs.Get-service-versions.outputs.atomic_version}}
+      gravity_adapter_mssql_version: ${{needs.Get-service-versions.outputs.gravity_adapter_mssql_version}}
+      gravity_sdk_version: ${{needs.Get-service-versions.outputs.gravity_sdk_version}}
     secrets:
       RUN_TOKEN: ${{secrets.RUN_TOKEN}}
       DOCKERHUB_USERNAME: ${{secrets.DOCKERHUB_USERNAME}}
