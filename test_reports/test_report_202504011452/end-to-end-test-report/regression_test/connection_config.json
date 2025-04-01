@@ -1,0 +1,31 @@
+{
+    "source-mssql":{
+        "type": "mssql",
+        "host": "127.0.0.1",
+        "port": 31433,
+        "username": "SA",
+        "password": "1qaz@WSX",
+        "database": "TestDB"
+    }, 
+    "target-mysql":{
+        "type": "mysql",
+        "host": "127.0.0.1",
+        "port": 33306,
+        "username": "mysql",
+        "password": "1qaz@WSX",
+        "database": "TargetTestDB"
+    },
+    "nats":{
+        "host": "127.0.0.1", 
+        "port": 32803
+    },
+	"dockerComposeFilePath": "./docker-compose.yaml",
+    "dockerComposeServiceNames": {
+        "sourceMSSQL": "source-mssql",
+        "targetMySQL": "target-mysql",
+        "dispatcher": "gravity-dispatcher",
+        "atomic": "atomic",
+        "adapter": "gravity-adapter-mssql",
+        "natsJetstream": "nats-jetstream"
+    }
+} 

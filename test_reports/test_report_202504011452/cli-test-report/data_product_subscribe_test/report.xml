@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="" tests="24" skipped="0" failures="6" errors="0" time="16.664035926">
+  <testsuite name="Data Product subscribe" tests="24" skipped="0" failures="6" errors="0" time="16.663929231">
+    <testcase name="Successful scenario. Use the `product sub` command to receive all data published to the specified data product M(1) " status="failed" time="1.1484872959999999">
+      <failure message="Step The CLI returns all events data within the &#34;&#39;-1&#39;&#34; and after &#34;&#39;1&#39;&#34;: &#xA;expect: create &#xA;actual: INSERT"></failure>
+    </testcase>
+    <testcase name="Successful scenario. Use the `product sub` command to receive all data published to the specified data product M(2) " status="passed" time="1.149380834"></testcase>
+    <testcase name="Successful scenario. Use the `product sub` command to receive all data published to the specified data product M(3) " status="failed" time="1.147537058">
+      <failure message="Step The CLI returns all events data within the &#34;&#39;200&#39;&#34; and after &#34;&#39;1&#39;&#34;: &#xA;expect: create &#xA;actual: INSERT"></failure>
+    </testcase>
+    <testcase name="Successful scenario. Use the `product sub` command to receive all data published to the specified data product M(4) " status="passed" time="1.152876264"></testcase>
+    <testcase name="Successful scenario. Use the `product sub` command to receive all data published to the specified data product M(5) " status="passed" time="1.153871389"></testcase>
+    <testcase name="Successful scenario. Use the `product sub` command to receive all data published to the specified data product M(6) " status="failed" time="1.151740844">
+      <failure message="Step The CLI returns all events data within the &#34;&#39;[ignore]&#39;&#34; and after &#34;&#39;1&#39;&#34;: &#xA;expect: create &#xA;actual: INSERT"></failure>
+    </testcase>
+    <testcase name="Successful scenario. Use the `product sub` command to receive all data published to the specified data product M(7) " status="passed" time="1.149092856"></testcase>
+    <testcase name="Successful scenario. Use the `product sub` command to receive all data published to the specified data product M(8) " status="passed" time="1.151862262"></testcase>
+    <testcase name="Successful scenario. Use the `product sub` command to receive all data published to the specified data product M(9) " status="failed" time="1.151011574">
+      <failure message="Step The CLI returns all events data within the &#34;&#39;131,200&#39;&#34; and after &#34;&#39;1&#39;&#34;: &#xA;expect: create &#xA;actual: INSERT"></failure>
+    </testcase>
+    <testcase name="Successful scenario. Use the `product sub` command to receive all data published to the specified data product M(10) " status="passed" time="1.152006358"></testcase>
+    <testcase name="Successful scenario. Use the `product sub` command to receive all data published to the specified data product M(11) " status="failed" time="1.152414204">
+      <failure message="Step The CLI returns all events data within the &#34;&#39;-1&#39;&#34; and after &#34;&#39;[ignore]&#39;&#34;: &#xA;expect: create &#xA;actual: INSERT"></failure>
+    </testcase>
+    <testcase name="Successful scenario. Use the `product sub` command to receive all data published to the specified data product M(12) " status="passed" time="1.151719182"></testcase>
+    <testcase name="Successful scenario. Use the `product sub` command to receive all data published to the specified data product M(13) " status="failed" time="1.151239716">
+      <failure message="Step The CLI returns all events data within the &#34;&#39;-1&#39;&#34; and after &#34;&#39;5&#39;&#34;: &#xA;expect: create &#xA;actual: INSERT"></failure>
+    </testcase>
+    <testcase name="Failure scenario. Use the `product sub` command to receive all data published to the specified data product E1(1) " status="passed" time="0.155769516"></testcase>
+    <testcase name="Failure scenario. Use the `product sub` command to receive all data published to the specified data product E1(2) " status="passed" time="0.152549283"></testcase>
+    <testcase name="Failure scenario. Use the `product sub` command to receive all data published to the specified data product E1(3) " status="passed" time="0.153318471"></testcase>
+    <testcase name="Failure scenario. Use the `product sub` command to receive all data published to the specified data product E1(4) " status="passed" time="0.156591651"></testcase>
+    <testcase name="Failure scenario. Use the `product sub` command to receive all data published to the specified data product E1(5) " status="passed" time="0.153836357"></testcase>
+    <testcase name="Failure scenario. Use the `product sub` command to receive all data published to the specified data product E1(6) " status="passed" time="0.152914373"></testcase>
+    <testcase name="Failure scenario. Use the `product sub` command to receive all data published to the specified data product E1(7) " status="passed" time="0.155566708"></testcase>
+    <testcase name="Failure scenario. Use the `product sub` command to receive all data published to the specified data product E1(8) " status="passed" time="0.152117402"></testcase>
+    <testcase name="Failure scenario. Use the `product sub` command to receive all data published to the specified data product E1(9) " status="passed" time="0.153511255"></testcase>
+    <testcase name="Failure scenario. Use the `product sub` command to receive all data published to the specified data product E1(10) " status="passed" time="0.152418629"></testcase>
+    <testcase name="Failure scenario. Use the `product sub` command to receive all data published to the specified data product E1(11) " status="passed" time="0.153748099"></testcase>
+  </testsuite>
+</testsuites>
