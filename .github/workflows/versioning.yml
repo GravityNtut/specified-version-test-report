@@ -26,7 +26,8 @@ jobs:
         run: |
           chmod +x scripts/get_version.sh
           OUTPUT=$(scripts/get_version.sh ${{github.event.inputs.version_number}})
-          echo "$OUTPUT" >> $GITHUB_ENV
+          echo $OUTPUT >> $GITHUB_ENV
+          echo $GITHUB_ENV
 
   Trigger-main-workflow:
     uses: ./.github/workflows/main.yml
