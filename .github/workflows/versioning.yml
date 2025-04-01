@@ -18,16 +18,17 @@ jobs:
       - self-hosted
       - tests
     outputs:
-      nats_jetstream_version: ${{ steps.Get_each_version_from_config_file.outputs.nats_jetstream_version }}
-      gravity_dispatcher_version: ${{ steps.Get_each_version_from_config_file.outputs.gravity_dispatcher_version }}
-      atomic_version:  ${{ steps.Get_each_version_from_config_file.outputs.atomic_version }}
-      gravity_adapter_mssql_version:  ${{ steps.Get_each_version_from_config_file.outputs.gravity_adapter_mssql_version }}
-      gravity_sdk_version:  ${{ steps.Get_each_version_from_config_file.outputs.gravity_sdk_version }}
+      nats_jetstream_version: ${{ steps.get_each_version_from_config_file.outputs.nats_jetstream_version }}
+      gravity_dispatcher_version: ${{ steps.get_each_version_from_config_file.outputs.gravity_dispatcher_version }}
+      atomic_version:  ${{ steps.get_each_version_from_config_file.outputs.atomic_version }}
+      gravity_adapter_mssql_version:  ${{ steps.get_each_version_from_config_file.outputs.gravity_adapter_mssql_version }}
+      gravity_sdk_version:  ${{ steps.get_each_version_from_config_file.outputs.gravity_sdk_version }}
     steps: 
       - name: Checkout code
         uses: actions/checkout@v4
 
       - name: Get_each_version_from_config_file
+        id: get_each_version_from_config_file
         run: |
           CONFIG_FILE=configs/${{github.event.inputs.version_number}}.json
           if [ ! -f "$CONFIG_FILE" ]; then
@@ -47,13 +48,13 @@ jobs:
           echo "atomic_version=$ATOMIC" >> $GITHUB_OUTPUT
           echo "gravity_adapter_mssql_version=$GRAVITY_ADAPTER_MSSQL" >> $GITHUB_OUTPUT
 
-      - name: Check out
+      - name: Check output variables
         run: |
-          echo nats_jetstream_version: ${{ steps.Get_each_version_from_config_file.outputs.nats_jetstream_version }}
-          echo gravity_dispatcher_version: ${{ steps.Get_each_version_from_config_file.outputs.gravity_dispatcher_version }}
-          echo atomic_version:  ${{ steps.Get_each_version_from_config_file.outputs.atomic_version }}
-          echo gravity_adapter_mssql_version:  ${{ steps.Get_each_version_from_config_file.outputs.gravity_adapter_mssql_version }}
-          echo gravity_sdk_version:  ${{ steps.Get_each_version_from_config_file.outputs.gravity_sdk_version }}
+          echo nats_jetstream_version: ${{ steps.get_each_version_from_config_file.outputs.nats_jetstream_version }}
+          echo gravity_dispatcher_version: ${{ steps.get_each_version_from_config_file.outputs.gravity_dispatcher_version }}
+          echo atomic_version:  ${{ steps.get_each_version_from_config_file.outputs.atomic_version }}
+          echo gravity_adapter_mssql_version:  ${{ steps.get_each_version_from_config_file.outputs.gravity_adapter_mssql_version }}
+          echo gravity_sdk_version:  ${{ steps.get_each_version_from_config_file.outputs.gravity_sdk_version }}
 
   Trigger-main-workflow:
     needs: Get-service-versions
