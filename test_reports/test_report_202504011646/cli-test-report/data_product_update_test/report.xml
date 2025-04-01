@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="" tests="13" skipped="0" failures="0" errors="0" time="1.5937244289999999">
+  <testsuite name="Data Product update" tests="13" skipped="0" failures="0" errors="0" time="1.592974149">
+    <testcase name="Success scenario for updating a data product M(1) " status="passed" time="0.123304937"></testcase>
+    <testcase name="Success scenario for updating a data product M(2) " status="passed" time="0.123149048"></testcase>
+    <testcase name="Success scenario for updating a data product M(3) " status="passed" time="0.115835474"></testcase>
+    <testcase name="Success scenario for updating a data product M(4) " status="passed" time="0.121146148"></testcase>
+    <testcase name="Success scenario for updating a data product M(5) " status="passed" time="0.121500151"></testcase>
+    <testcase name="Success scenario for updating a data product M(6) " status="passed" time="0.122349515"></testcase>
+    <testcase name="Success scenario for updating a data product M(7) " status="passed" time="0.120130514"></testcase>
+    <testcase name="Success scenario for updating a data product M(8) " status="passed" time="0.12163531"></testcase>
+    <testcase name="Fail scenario for updating data product E1(1) " status="passed" time="0.122362268"></testcase>
+    <testcase name="Fail scenario for updating data product E1(2) " status="passed" time="0.120264693"></testcase>
+    <testcase name="Fail scenario for updating data product E1(3) " status="passed" time="0.125018614"></testcase>
+    <testcase name="Fail scenario for updating data product E1(4) " status="passed" time="0.123161708"></testcase>
+    <testcase name="Fail scenario for updating data product E1(5) " status="passed" time="0.123340946"></testcase>
+  </testsuite>
+</testsuites>

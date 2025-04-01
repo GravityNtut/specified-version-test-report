@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="" tests="1" skipped="0" failures="0" errors="0" time="85.539338146">
+  <testsuite name="Gravity2 MSSQL to MySQL - Check boolean type" tests="1" skipped="0" failures="0" errors="0" time="85.538607777">
+    <testcase name="Check the boolean value correctness at each point in the process" status="passed" time="85.538607777"></testcase>
+  </testsuite>
+</testsuites>

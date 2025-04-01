@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="" tests="11" skipped="0" failures="1" errors="0" time="2176.437104487">
+  <testsuite name="Gravity2 MSSQL to MySQL - Component restart while No data changes" tests="6" skipped="0" failures="0" errors="0" time="1027.224163624">
+    <testcase name="After synchronizing changes, restart the component, wait for it ready, then add, update, or delete data M(1) " status="passed" time="175.546212939"></testcase>
+    <testcase name="After synchronizing changes, restart the component, wait for it ready, then add, update, or delete data M(2) " status="passed" time="172.869654656"></testcase>
+    <testcase name="After synchronizing changes, restart the component, wait for it ready, then add, update, or delete data M(3) " status="passed" time="173.944283105"></testcase>
+    <testcase name="After synchronizing changes, restart the component, wait for it ready, then add, update, or delete data M(4) " status="passed" time="163.715634234"></testcase>
+    <testcase name="After synchronizing changes, restart the component, wait for it ready, then add, update, or delete data M(5) " status="passed" time="171.309678647"></testcase>
+    <testcase name="After synchronizing changes, restart the component, wait for it ready, then add, update, or delete data M(6) " status="passed" time="169.837178485"></testcase>
+  </testsuite>
+  <testsuite name="Gravity2 MSSQL to MySQL - Service restart during data transfer" tests="5" skipped="0" failures="1" errors="0" time="1149.21227007">
+    <testcase name="Perform insertions, updates, or deletions of data, and restart services during data transfer. M(1) " status="passed" time="252.550887827"></testcase>
+    <testcase name="Perform insertions, updates, or deletions of data, and restart services during data transfer. M(2) " status="passed" time="254.618103934"></testcase>
+    <testcase name="Perform insertions, updates, or deletions of data, and restart services during data transfer. M(3) [waived]" status="failed" time="130.592254981">
+      <failure message="Step &#34;target-mysql&#34; has the same content as &#34;source-mssql&#34; in &#34;Accounts&#34; (timeout &#34;90&#34;): number of records in table &#39;Accounts&#39; is 3031, expected 3000 after 90 second"></failure>
+      <error message="Step &#34;source-mssql&#34; table &#34;Accounts&#34; continuously updating &#34;3000&#34; data - appending suffix &#39;updated&#39; to each Name field (starting ID &#34;1&#34;) and inserting &#34;1000&#34; data (starting ID &#34;3001&#34;)" type="skipped"></error>
+      <error message="Step docker compose &#34;stop&#34; service &#34;nats-jetstream&#34; (in &#34;foreground&#34;)" type="skipped"></error>
+      <error message="Step container &#34;nats-jetstream&#34; was &#34;exited&#34; (timeout &#34;120&#34;)" type="skipped"></error>
+      <error message="Step docker compose &#34;start&#34; service &#34;nats-jetstream&#34; (in &#34;foreground&#34;)" type="skipped"></error>
+      <error message="Step container &#34;nats-jetstream&#34; ready (timeout &#34;120&#34;)" type="skipped"></error>
+      <error message="Step wait for &#34;source-mssql&#34; table &#34;Accounts&#34; update and insertion to complete (timeout &#34;120&#34;)" type="skipped"></error>
+      <error message="Step Check the nats stream DP has correct messages (timeout &#34;10&#34;)" type="skipped"></error>
+      <error message="Step &#34;target-mysql&#34; has the same content as &#34;source-mssql&#34; in &#34;Accounts&#34; (timeout &#34;90&#34;)" type="skipped"></error>
+      <error message="Step &#34;source-mssql&#34; table &#34;Accounts&#34; continuous cleanup" type="skipped"></error>
+      <error message="Step docker compose &#34;stop&#34; service &#34;nats-jetstream&#34; (in &#34;foreground&#34;)" type="skipped"></error>
+      <error message="Step container &#34;nats-jetstream&#34; was &#34;exited&#34; (timeout &#34;120&#34;)" type="skipped"></error>
+      <error message="Step docker compose &#34;start&#34; service &#34;nats-jetstream&#34; (in &#34;foreground&#34;)" type="skipped"></error>
+      <error message="Step container &#34;nats-jetstream&#34; ready (timeout &#34;120&#34;)" type="skipped"></error>
+      <error message="Step wait for &#34;source-mssql&#34; table &#34;Accounts&#34; cleanup to complete (timeout &#34;120&#34;)" type="skipped"></error>
+      <error message="Step Check the nats stream DP has correct messages (timeout &#34;10&#34;)" type="skipped"></error>
+      <error message="Step &#34;target-mysql&#34; table &#34;Accounts&#34; has &#34;0&#34; data (timeout &#34;120&#34;)" type="skipped"></error>
+    </testcase>
+    <testcase name="Perform insertions, updates, or deletions of data, and restart services during data transfer. M(4) " status="passed" time="253.567549524"></testcase>
+    <testcase name="Perform insertions, updates, or deletions of data, and restart services during data transfer. M(5) " status="passed" time="257.881885989"></testcase>
+  </testsuite>
+</testsuites>
