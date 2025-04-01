@@ -30,17 +30,23 @@ jobs:
       - name: Get_each_version_from_config_file
         id: get_each_version_from_config_file
         run: |
-          chmod +x scripts/get_version.sh
-          OUTPUT=$(scripts/get_version.sh ${{github.event.inputs.version_number}})
-          echo $OUTPUT >> $GITHUB_OUTPUT
+          CONFIG_FILE=configs/${{github.event.inputs.version_number}}.json
+          if [ ! -f "$CONFIG_FILE" ]; then
+              echo "Error: Can't find $CONFIG_FILE"
+              exit 1
+          fi
+          
+          GRAVITY_SDK=$(jq -r '.package["gravity-sdk"]' "$CONFIG_FILE")
+          NATS_JETSTREAM=$(jq -r '.gravity["nats-jetstream"]' "$CONFIG_FILE")
+          GRAVITY_DISPATCHER=$(jq -r '.gravity["gravity-dispatcher"]' "$CONFIG_FILE")
+          ATOMIC=$(jq -r '.gravity["atomic"]' "$CONFIG_FILE")
+          GRAVITY_ADAPTER_MSSQL=$(jq -r '.gravity["gravity_adapter_mssql"]' "$CONFIG_FILE")
 
-      - name: Check output variables
-        run: |
-          echo nats_jetstream_version: ${{ steps.get_each_version_from_config_file.outputs.nats_jetstream_version }}
-          echo gravity_dispatcher_version: ${{ steps.get_each_version_from_config_file.outputs.gravity_dispatcher_version }}
-          echo atomic_version:  ${{ steps.get_each_version_from_config_file.outputs.atomic_version }}
-          echo gravity_adapter_mssql_version:  ${{ steps.get_each_version_from_config_file.outputs.gravity_adapter_mssql_version }}
-          echo gravity_sdk_version:  ${{ steps.get_each_version_from_config_file.outputs.gravity_sdk_version }}
+          echo "gravity_sdk_version=$GRAVITY_SDK" >> $GITHUB_OUTPUT
+          echo "nats_jetstream_version=$NATS_JETSTREAM" >> $GITHUB_OUTPUT
+          echo "gravity_dispatcher_version=$GRAVITY_DISPATCHER" >> $GITHUB_OUTPUT
+          echo "atomic_version=$ATOMIC" >> $GITHUB_OUTPUT
+          echo "gravity_adapter_mssql_version=$GRAVITY_ADAPTER_MSSQL" >> $GITHUB_OUTPUT
 
   Trigger-main-workflow:
     needs: Get-service-versions
