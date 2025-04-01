@@ -109,17 +109,17 @@ jobs:
         run: |
           echo "Running tests"
           chmod +x scripts/run_all.sh
-          scripts/run_all.sh ${{github.event.inputs.nats_jetstream_version}} ${{github.event.inputs.gravity_dispatcher_version}} ${{github.event.inputs.atomic_version}} ${{github.event.inputs.gravity_adapter_mssql_version}} ${{github.event.inputs.gravity_sdk_version}}
+          scripts/run_all.sh ${{inputs.nats_jetstream_version}} ${{inputs.gravity_dispatcher_version}} ${{inputs.atomic_version}} ${{inputs.gravity_adapter_mssql_version}} ${{inputs.gravity_sdk_version}}
 
       - name: Create Test Report
         run: |
           chmod +x scripts/create_test_report.sh
-          scripts/create_test_report.sh ${{github.event.inputs.nats_jetstream_version}} ${{github.event.inputs.gravity_dispatcher_version}} ${{github.event.inputs.atomic_version}} ${{github.event.inputs.gravity_adapter_mssql_version}} ${{github.event.inputs.gravity_sdk_version}} $TIME
+          scripts/create_test_report.sh ${{inputs.nats_jetstream_version}} ${{inputs.gravity_dispatcher_version}} ${{inputs.atomic_version}} ${{inputs.gravity_adapter_mssql_version}} ${{inputs.gravity_sdk_version}} $TIME
 
       - name: Create Config File
         run: |
           chmod +x scripts/create_config.sh
-          scripts/create_config.sh ${{github.event.inputs.nats_jetstream_version}} ${{github.event.inputs.gravity_dispatcher_version}} ${{github.event.inputs.atomic_version}} ${{github.event.inputs.gravity_adapter_mssql_version}} ${{github.event.inputs.gravity_sdk_version}} $TIME
+          scripts/create_config.sh ${{inputs.nats_jetstream_version}} ${{inputs.gravity_dispatcher_version}} ${{inputs.atomic_version}} ${{inputs.gravity_adapter_mssql_version}} ${{inputs.gravity_sdk_version}} $TIME
 
       - name: Configure Git
         run: |
