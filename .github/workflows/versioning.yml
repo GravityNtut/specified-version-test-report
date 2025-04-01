@@ -37,9 +37,6 @@ jobs:
 
   Trigger-main-workflow:
     needs: Get-service-versions
-    runs-on: 
-      - self-hosted
-      - tests
     uses: ./.github/workflows/main.yml
     with:
       nats_jetstream_version: needs.Get-service-versions.outputs.nats_jetstream_version
